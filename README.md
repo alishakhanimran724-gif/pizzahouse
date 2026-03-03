@@ -1,168 +1,195 @@
-# Pizz_a64 - Enhanced Pizza Delivery Website
+# 🍕 Pizza House — Full-Stack Pizza Ordering Web App
 
-## 🎉 New Features Added
+> A modern, fully responsive pizza ordering platform built from scratch with PHP, MySQL & Vanilla JS — no frameworks, no shortcuts.
 
-### Pages
-- ✅ **Home Page** - Enhanced with more sections and better UI
-- ✅ **About Page** - Company story, statistics, and testimonials
-- ✅ **Contact Page** - Contact form, location map, and FAQ section
-- ✅ **Login Page** - User authentication with social login options
-- ✅ **Signup Page** - User registration with validation
-- ✅ **Wishlist Page** - Save favorite pizzas for later
-- ✅ **Menu Page** (existing - retained)
-- ✅ **Product Page** (existing - retained)
-- ✅ **Cart Page** (existing - retained)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-### Enhancements
-- 🎨 **Font Awesome Icons** - Beautiful icons throughout the site
-- 📱 **Responsive Design** - Works perfectly on all devices
-- 💫 **Smooth Animations** - Hover effects and transitions
-- 🎯 **Better UX** - Improved navigation and user flow
-- ⭐ **Testimonials Section** - Customer reviews and ratings
-- 📊 **Statistics Section** - Business metrics display
-- 🗺️ **Google Maps Integration** - Find us easily
-- 📞 **Contact Information** - Multiple ways to reach us
+---
 
-### New Sections on Home Page
-1. **Hero Section** - Eye-catching banner with CTA buttons
-2. **Features Grid** - Why choose us section
-3. **Featured Products** - Showcase popular pizzas
-4. **How It Works** - Step-by-step ordering guide
-5. **Testimonials** - Customer reviews
-6. **Call-to-Action** - Special offer section
+## 🌐 Live Demo
 
-## 🚀 Installation
+> 🔗 [View Live Demo](your-live-link-here)
 
-1. **Database Setup**
-   ```bash
-   mysql -u root -p < database.sql
-   ```
+---
 
-2. **Configure Database**
-   Edit `app/config/database.php` with your credentials:
-   ```php
-   private $host = "localhost";
-   private $db_name = "pizz_a64";
-   private $username = "your_username";
-   private $password = "your_password";
-   ```
+## 📸 Screenshots
 
-3. **Start Server**
-   ```bash
-   cd public
-   php -S localhost:8000
-   ```
+| Home Page | Menu Page | Cart Page |
+|-----------|-----------|-----------|
+| ![Home](screenshots/home.png) | ![Menu](screenshots/menu.png) | ![Cart](screenshots/cart.png) |
 
-4. **Access Website**
-   Open browser: `http://localhost:8000`
+---
+
+## ✨ Features
+
+- 🍕 **Dynamic Menu** — Category filters, veg/non-veg toggle, real-time product count
+- 🛒 **Smart Cart** — AJAX-powered add/remove/update, zero page reloads
+- ❤️ **Wishlist System** — Save favourites, toggle with live badge sync
+- 🔐 **User Auth** — Signup, Login, Session management with secure password hashing
+- 💰 **Order System** — GST (5%) calculation, free delivery above ₹499, order placement
+- 📦 **Product Pages** — Size selection, quantity control, live price calculation
+- 📱 **Fully Responsive** — Mobile-first design, hamburger nav, works on all screen sizes
+- 🎨 **Polished UI** — Scroll-reveal animations, sticky header, promo banner, floating chips
+- 📬 **Contact Form** — Message submission + callback request feature
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Backend | PHP (vanilla, front-controller pattern) |
+| Database | MySQL |
+| Frontend | HTML5, CSS3, Vanilla JavaScript |
+| Icons | Font Awesome 6 |
+| Images | Unsplash API |
+| Architecture | MVC-inspired, single entry-point router |
+
+---
 
 ## 📁 Project Structure
 
 ```
-improved_pizza_website/
-├── public/
-│   ├── css/
-│   │   └── style.css (Enhanced with new styles)
-│   ├── js/
-│   │   └── main.js
-│   └── index.php (Updated with new routes)
-├── app/
-│   ├── views/
-│   │   ├── layout/
-│   │   │   ├── header.php (With Font Awesome)
-│   │   │   └── footer.php (Enhanced footer)
-│   │   └── pages/
-│   │       ├── home.php (Enhanced)
-│   │       ├── about.php (NEW)
-│   │       ├── contact.php (NEW)
-│   │       ├── login.php (NEW)
-│   │       ├── signup.php (NEW)
-│   │       ├── wishlist.php (NEW)
-│   │       ├── menu.php
-│   │       ├── product.php
-│   │       └── cart.php
-│   ├── models/
-│   │   ├── Product.php
-│   │   └── Cart.php
-│   └── config/
-│       └── database.php
-└── database.sql
+pizza-house/
+│
+├── index.php              # Front controller / router
+├── config/
+│   └── db.php             # Database connection
+│
+├── pages/
+│   ├── home.php           # Landing page
+│   ├── menu.php           # Full menu with filters
+│   ├── product.php        # Product detail + add to cart
+│   ├── cart.php           # Cart + order placement
+│   ├── wishlist.php       # Saved items
+│   ├── login.php          # User login
+│   ├── signup.php         # User registration
+│   ├── about.php          # About page
+│   └── contact.php        # Contact + FAQ
+│
+├── includes/
+│   ├── header.php         # Navbar + promo bar
+│   └── footer.php         # Footer + newsletter
+│
+└── public/
+    ├── css/
+    │   └── style.css      # Global styles
+    └── js/
+        └── main.js        # Global scripts
 ```
-
-## 🎨 Design Features
-
-### Color Scheme
-- Primary: #8B1E3F (Deep Red)
-- Secondary: #E8DCC4 (Cream)
-- Accent: #C49A6C (Gold)
-- Text: #2C2C2C (Dark Gray)
-
-### Typography
-- Headings: Playfair Display (Serif)
-- Body: Crimson Text (Serif)
-
-### Icons
-- Font Awesome 6.4.0 (CDN)
-- Used throughout navigation, features, and actions
-
-## 🔧 Features to Implement
-
-The following features are mocked and need proper backend implementation:
-
-1. **User Authentication**
-   - Login functionality
-   - Registration with validation
-   - Social login integration
-   - Password reset
-
-2. **Wishlist System**
-   - Add/remove items from wishlist
-   - Persistent wishlist storage
-   - Wishlist count in header
-
-3. **Contact Form**
-   - Form submission handling
-   - Email notifications
-   - Form validation
-
-4. **Search Functionality**
-   - Product search
-   - Category filtering
-
-## 📝 Notes
-
-- All existing functionality (cart, products) is preserved
-- Same elegant styling maintained throughout
-- Font Awesome icons loaded via CDN
-- Responsive design for mobile devices
-- Ready for backend integration
-
-## 🌟 Key Improvements
-
-1. **Better Navigation**: Clear menu with icons
-2. **Enhanced Footer**: Multiple sections with useful links
-3. **Social Proof**: Testimonials and statistics
-4. **Trust Building**: About page with company story
-5. **Easy Contact**: Multiple ways to get in touch
-6. **User Accounts**: Login/signup functionality
-7. **Wishlist**: Save favorites for later
-
-## 🎯 Next Steps
-
-1. Implement user authentication backend
-2. Add wishlist database table and functionality
-3. Integrate contact form with email service
-4. Add search functionality
-5. Implement user profile pages
-6. Add order tracking
-7. Payment gateway integration
-
-## 📞 Support
-
-For any questions or issues, please contact:
-- Email: info@pizz-a64.com
-- Phone: +91 123-456-7890
 
 ---
 
-**Made with ❤️ for pizza lovers**
+## ⚙️ Installation & Setup
+
+### Prerequisites
+- PHP 8.0+
+- MySQL 5.7+
+- Apache / Nginx (or XAMPP / WAMP locally)
+
+### Steps
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/your-username/pizza-house.git
+cd pizza-house
+```
+
+**2. Create the database**
+```bash
+mysql -u root -p
+CREATE DATABASE pizza_house;
+```
+
+**3. Import the SQL file**
+```bash
+mysql -u root -p pizza_house < database/pizza_house.sql
+```
+
+**4. Configure database connection**
+```php
+// config/db.php
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', 'your_password');
+define('DB_NAME', 'pizza_house');
+```
+
+**5. Start your local server**
+```bash
+# If using XAMPP — place project in /htdocs and visit:
+http://localhost/pizza-house
+```
+
+---
+
+## 🗄️ Database Tables
+
+| Table | Description |
+|-------|-------------|
+| `users` | Registered user accounts |
+| `products` | Pizza & side dish catalog |
+| `product_sizes` | Size variants with pricing |
+| `cart` | Session-based cart items |
+| `wishlist` | User saved products |
+| `orders` | Placed orders |
+| `order_items` | Items within each order |
+| `contacts` | Contact form submissions |
+
+---
+
+## 🚀 Roadmap
+
+- [ ] Razorpay / Stripe payment gateway
+- [ ] Admin dashboard (orders, products, users)
+- [ ] Real-time order tracking
+- [ ] Email confirmation on order placement
+- [ ] PWA support for mobile install
+- [ ] Coupon & promo code system
+- [ ] Product reviews & ratings
+
+---
+
+## 💡 What I Learned
+
+- Building a **front-controller router** in pure PHP
+- **AJAX-powered** cart & wishlist without any library
+- Handling **session-based state** across multiple pages
+- Real-world pricing logic — GST, conditional delivery fees
+- Writing **clean, reusable** PHP partials (header, footer)
+- Designing a **mobile-first** UI from scratch
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+1. Fork the project
+2. Create your branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 👨‍💻 Author
+
+**Your Name**
+- LinkedIn: https://www.linkedin.com/in/alisha-imran-a30601322/
+- GitHub:https://github.com/alishakhanimran724-gif/
+- Email: alishakhanimran724@gmail.com
+
+---
+
+> ⭐ If you found this project helpful or interesting, please consider giving it a **star** — it means a lot and keeps me motivated to build more! 🙏
